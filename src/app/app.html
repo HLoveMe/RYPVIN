@@ -1,1 +1,25 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-nav [root]="rootPage" #RootConetent></ion-nav>
+
+<ion-menu [content]="RootConetent" type="overlay">
+
+    <ion-content class="side">
+        <div class="Heander">
+            <div class="lv">
+                <img src="https://avatars2.githubusercontent.com/u/14937633?s=460&v=4" alt="" class="icon">
+            </div>
+            <div class="rv">
+                <div padding-left>
+                    朱子豪
+                </div>
+                <div padding-left padding-top>
+                    176****9999
+                </div>
+            </div>
+        </div>
+        <ion-list>
+            <button menuClose *ngFor="let item of sideMenus" ion-item (click)="openPage(item)">
+            {{item.title}}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
