@@ -1,3 +1,4 @@
+import { About } from './../pages/About/About';
 import { VinMessagePage } from './../pages/VinMessage/VinMessage';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, NavController } from 'ionic-angular';
@@ -30,8 +31,12 @@ export class MyApp {
       },
       {
         index:1,
-        title:"系统设置",
+        title:"设置",
         page:Setting
+      },{
+        index:2,
+        title:"关于",
+        page:About
       }
     ]
   }

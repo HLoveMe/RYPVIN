@@ -1,6 +1,8 @@
+import { NetWorkUtilBox } from './tools/NetUtils';
+import { AppInfoService } from './tools/Api';
+import { About } from './../pages/About/About';
 
 import { AppInstructions } from './Appinstructions/AppInstructions';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -12,10 +14,12 @@ import { SideMenuPage } from "../pages/SideMenu/SideMenu";
 import { VinMessagePage } from "../pages/VinMessage/VinMessage";
 import { Setting } from '../pages/Setting/Setting';
 
+
+import { AppVersion } from '@ionic-native/app-version';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,SideMenuPage,VinMessagePage,Setting
+    HomePage,SideMenuPage,VinMessagePage,Setting,About
   ],
   imports: [
     BrowserModule,
@@ -30,12 +34,13 @@ import { Setting } from '../pages/Setting/Setting';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,SideMenuPage,VinMessagePage,Setting
+    HomePage,SideMenuPage,VinMessagePage,Setting,About
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AppVersion,AppInfoService,NetWorkUtilBox
   ]
 })
 export class AppModule {}
