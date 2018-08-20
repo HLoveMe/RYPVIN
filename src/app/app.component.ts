@@ -3,8 +3,9 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { HomePage } from '../pages/home/home';
+import { Setting } from '../pages/Setting/Setting';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -26,6 +27,11 @@ export class MyApp {
         index:0,
         title:"Vin消息",
         page:VinMessagePage
+      },
+      {
+        index:1,
+        title:"系统设置",
+        page:Setting
       }
     ]
   }

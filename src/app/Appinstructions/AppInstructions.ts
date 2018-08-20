@@ -2,16 +2,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexBoxCenter } from './Directives/Flex-Box-Center';
+import { DisableScroll } from './Directives/DisableScroll';
 
 @NgModule({
     imports: [
         CommonModule
     ],
     declarations: [
-        FlexBoxCenter
+        FlexBoxCenter,
+        DisableScroll
     ],
     exports:[
-        FlexBoxCenter
+        FlexBoxCenter,
+        DisableScroll
     ]
 
 })

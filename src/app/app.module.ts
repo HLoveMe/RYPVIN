@@ -10,11 +10,12 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SideMenuPage } from "../pages/SideMenu/SideMenu";
 import { VinMessagePage } from "../pages/VinMessage/VinMessage";
+import { Setting } from '../pages/Setting/Setting';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,SideMenuPage,VinMessagePage,
+    HomePage,SideMenuPage,VinMessagePage,Setting
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,7 @@ import { VinMessagePage } from "../pages/VinMessage/VinMessage";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,SideMenuPage,VinMessagePage
+    HomePage,SideMenuPage,VinMessagePage,Setting
   ],
   providers: [
     StatusBar,
