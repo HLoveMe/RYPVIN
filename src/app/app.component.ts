@@ -14,7 +14,6 @@ export class MyApp {
   @ViewChild("RootConetent") navC:NavController
   constructor(platform: Platform, statusBar: StatusBar, 
     splashScreen: SplashScreen,
-    private menuC:MenuController,
   ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
