@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { AppVersion } from '@ionic-native/app-version';
 
 export enum AppMode {
-    Beta = 0,
-    Development = 1,
-    Release = 2
+    Beta = "beta",
+    Development = "development",
+    Release = "release"
 }
 
 export class AppConfig {
@@ -28,12 +28,37 @@ export class AppConfig {
 
 }
 export class URLConfig{
-    g_url:string = ""
-    o_url:string = ""
-    m_url:string = ""
-
+    gUrl:string = ""
+    oUrl:string = ""
+    uUrl:string = ""
+    msgUrl:string = ""
+    vinUrl:string = ""
+    mUrl:string = ""
+    registerUrl:string = ""
+    sUrl:string = ""
+    wxUrl:string = ""
     constructor(mode:AppMode = AppMode.Beta){
-
+        if(mode == AppMode.Beta){
+            this.gUrl ="https://g-api-test-" + AppMode.Beta + ".ecpei.cn"
+            this.oUrl =  "https://o-api-test-" + AppMode.Beta + ".ecpei.cn"
+            this.uUrl =  "https://u-api-test-" + AppMode.Beta + ".ecpei.cn"
+            this.msgUrl =  "https://message-api-test-" + AppMode.Beta + ".ecpei.cn"
+            this.vinUrl = "https://vin-api-test-" + AppMode.Beta + ".ecpei.cn"
+            this.mUrl = "https://m-test-" + AppMode.Beta + ".ecpei.cn/"
+            this.registerUrl = "https://u-api-test.ecpei.cn"
+            this.sUrl =  "https://s-api-test-" + AppMode.Beta + ".ecpei.cn"
+            this.wxUrl = "https://api-test.ecpei.cn"
+        }else if(mode == AppMode.Release){
+            this.gUrl = "https://g-api.ecpei.cn"
+            this.oUrl = "https://o-api.ecpei.cn"
+            this.uUrl = "https://u-api.ecpei.cn"
+            this.msgUrl = "https://message-api.ecpei.cn"
+            this.vinUrl = "https://vin-api.ecpei.cn"
+            this.mUrl = "https://m-test-1-0-1.ecpei.cn/"
+            this.registerUrl = "https://u-api-test.ecpei.cn"
+            this.sUrl =  "https://s-api.ecpei.cn"
+            this. wxUrl = "https://api.ecpei.cn"
+        }else{}
     }
 }
 
