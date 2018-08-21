@@ -1,3 +1,5 @@
+import { SearchInput } from './UIComponents/Search/SearchInput';
+
 import { NetWorkUtilBox } from './tools/NetUtils';
 import { AppInfoService } from './tools/Api';
 import { About } from './../pages/About/About';
@@ -19,7 +21,10 @@ import { AppVersion } from '@ionic-native/app-version';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,SideMenuPage,VinMessagePage,Setting,About
+    HomePage,SideMenuPage,VinMessagePage,Setting,About,
+    
+    
+    SearchInput
   ],
   imports: [
     BrowserModule,
@@ -30,11 +35,16 @@ import { AppVersion } from '@ionic-native/app-version';
     }),
     //特性模块
     AppInstructions,
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,SideMenuPage,VinMessagePage,Setting,About
+    HomePage,SideMenuPage,VinMessagePage,Setting,About,
+
+
+    SearchInput
+
   ],
   providers: [
     StatusBar,

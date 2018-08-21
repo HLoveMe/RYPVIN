@@ -1,10 +1,20 @@
-import { Component } from "@angular/core";
 
+import { Component, Input, AfterViewInit ,
+    Renderer2,ElementRef,
+    ViewChild
+} from "@angular/core";
 
 @Component({
-    selector:" ",
-    templateUrl:" "
+    selector:"ion-search",
+    templateUrl:"SearchInput.html",
+    
 })
-export class SearchInput{
+export class SearchInput implements AfterViewInit{
+    @Input() type:string = "text"
+    @ViewChild("InputContainer") InputContainer:ElementRef
+    constructor(private render:Renderer2){
 
+    }
+    ngAfterViewInit(){
+    }
 }

@@ -1,0 +1,16 @@
+ion-search {
+    .input-container {
+        background-color: rebeccapurple;
+    }
+     :host {
+        // border: 3px solid black;
+        height: 100px;
+        background-color: red;
+    }
+     :host(.active) {
+        // border: 3px solid black;
+        height: 100px;
+        background-color: red;
+    }
+    .input-container {}
+}

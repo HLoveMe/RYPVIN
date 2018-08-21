@@ -1,35 +1,44 @@
 page-home {
-    .icon{
+    .icon {
         font-size: 2.2rem;
     }
-    .content{
-        .home_icon{
+    .content {
+        border: 1px solid red;
+    }
+    .content {
+        .home_icon {
             height: 20.35rem;
             display: flex;
             justify-content: center;
             padding-top: 6.55rem;
         }
-        .home_icon img{
+        .home_icon img {
             height: 8.8rem;
         }
-        .vin_input{
-            height: 4.4rem;
-            border-radius: 2.2rem;
-        }
-        .vin_input{
-            ion-input{
+        .vin_input {
+            ion-input {
                 background-color: white;
                 margin: 0 2rem;
                 padding: 0 2rem;
+                height: 4.4rem;
+                border-radius: 2.2rem;
             }
-            .text-input{
+            .text-input {
                 height: 100%;
                 margin: 0px !important;
                 padding: 8px 0px;
             }
         }
-    }   
-    .container{
+        .test {
+            height: 44px;
+            background-color: red;
+        }
+        ion-search {
+            height: 44px;
+            background-color: red;
+        }
+    }
+    .container {
         display: flex;
         justify-content: center;
         background-color: $bg_2;

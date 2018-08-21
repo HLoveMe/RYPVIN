@@ -7,9 +7,12 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  active:boolean = false
   constructor(public navCtrl: NavController,private netUtil:NetWorkUtilBox) {
     this.netUtil.User().login()
+    setTimeout(()=>{
+      this.active = true
+    },3000)
   }
 
 }
