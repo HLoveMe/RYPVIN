@@ -2,9 +2,36 @@ page-home {
     .icon{
         font-size: 2.2rem;
     }
-    .no-scroll{
-        height: 100%;
-        overflow: hidden;
-        overflow-y: hidden !important;
+    .content{
+        .home_icon{
+            height: 20.35rem;
+            display: flex;
+            justify-content: center;
+            padding-top: 6.55rem;
+        }
+        .home_icon img{
+            height: 8.8rem;
+        }
+        .vin_input{
+            height: 4.4rem;
+            border-radius: 2.2rem;
+        }
+        .vin_input{
+            ion-input{
+                background-color: white;
+                margin: 0 2rem;
+                padding: 0 2rem;
+            }
+            .text-input{
+                height: 100%;
+                margin: 0px !important;
+                padding: 8px 0px;
+            }
+        }
+    }   
+    .container{
+        display: flex;
+        justify-content: center;
+        background-color: $bg_2;
     }
 }
