@@ -5,6 +5,19 @@
 }
 
 .input-container {
+    .container{
+        margin-left: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        .icon{
+            width: 30px;
+            height: 100%;
+            background-color: aqua;
+        }
+    }
     ion-input{
         background-color: red;
         height: 100%;

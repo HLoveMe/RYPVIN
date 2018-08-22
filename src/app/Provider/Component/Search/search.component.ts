@@ -10,7 +10,7 @@ import { TextInput } from "ionic-angular";
     styles:[`:host{display:block;}`]
 })
 export class SearchInput implements AfterViewInit{
-
+    edit:boolean = false;
     @Input() type:string = "text"
     @ViewChild("Cover") CoverEle:ElementRef
     @ViewChild("textInput") textInput:TextInput;
