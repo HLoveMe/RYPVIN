@@ -1,0 +1,12 @@
+<div class="input-container" #InputContainer>
+    <ion-input #textInput
+        type="text" 
+        clearInput = "true"
+        placeholder ="AAA"
+        (blur) = "onblur()"
+    ></ion-input>
+    <div #Cover class="placehold_container" (click)="startInput($event)" >
+        <ion-icon name="search" class="seach-icon"></ion-icon>
+        <p>SSS</p>
+    </div>
+</div>

@@ -3,9 +3,6 @@ page-home {
         font-size: 2.2rem;
     }
     .content {
-        border: 1px solid red;
-    }
-    .content {
         .home_icon {
             height: 20.35rem;
             display: flex;
@@ -33,14 +30,17 @@ page-home {
             height: 44px;
             background-color: red;
         }
-        ion-search {
-            height: 44px;
-            background-color: red;
-        }
+        
     }
     .container {
         display: flex;
         justify-content: center;
         background-color: $bg_2;
+    }
+
+    ion-search{
+        height: 44px;
+        font-size: 1.6rem;
+        color:red;
     }
 }

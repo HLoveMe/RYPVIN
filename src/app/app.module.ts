@@ -1,4 +1,4 @@
-import { SearchInput } from './UIComponents/Search/SearchInput';
+import { SearchInput } from './Provider/Component/Search/search.component';
 
 import { NetWorkUtilBox } from './tools/NetUtils';
 import { AppInfoService } from './tools/Api';
