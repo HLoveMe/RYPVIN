@@ -30,17 +30,17 @@ page-home {
             height: 44px;
             background-color: red;
         }
-        
     }
     .container {
         display: flex;
         justify-content: center;
         background-color: $bg_2;
     }
-
-    ion-search{
+    ion-search {
         height: 44px;
         font-size: 1.6rem;
-        color:red;
+        color: red;
+        background-color: blue;
+        // border-radius: 22px;
     }
 }

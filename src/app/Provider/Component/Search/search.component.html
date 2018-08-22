@@ -1,12 +1,14 @@
 <div class="input-container" #InputContainer>
     <div class="container">
-        <div class="icon">
-                <ion-icon name="search" class="seach-icon"></ion-icon>
+        <div class="icon" [style.display]="leftIcon && edit ? 'block' : 'none'">
+            <ion-icon name="search" class="seach-icon"></ion-icon>
         </div>
-        <ion-input #textInput type="text" clearInput="true" placeholder="AAA" (blur)="onblur()"></ion-input>
+        <ion-input [placeholder]="_placeholder" #textInput type="text" clearInput="true" (blur)="onblur()" [(ngModel)]="value">
+
+        </ion-input>
     </div>
-    <div #Cover class="placehold_container" (click)="startInput($event)">
-        <ion-icon name="search" class="seach-icon"></ion-icon>
-        <p>SSS</p>
+    <div class="placehold_container" (click)="startInput($event)" [style.visibility]="edit ?'hidden' : 'visible'">
+        <ion-icon name="search" class="seach-icon" [style.visibility]="centerIcon ?'visible' :'hidden'"></ion-icon>
+        <p>{{placeholder}}</p>
     </div>
 </div>

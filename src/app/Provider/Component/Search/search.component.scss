@@ -1,50 +1,51 @@
-
 .input-container {
     height: 100%;
     position: relative;
+    color: $text-input-placeholder-color;
 }
 
 .input-container {
-    .container{
-        margin-left: 0.5rem;
+    .container {
+        margin-left: 0.7rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: rgba(1, 1, 1, 0);
+        height: 100%;
+        padding-right: 0.5rem;
     }
-    .container{
-        .icon{
-            width: 30px;
+    .container {
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100%;
-            background-color: aqua;
         }
     }
-    ion-input{
-        background-color: red;
-        height: 100%;
-    }
-    .text-input{
+    // ion-input {
+    //     height: 100%;
+    // }
+    .text-input {
         height: 100%;
         margin: 0px;
-        padding: 1rem !important;
+        padding: 0.5rem !important;
     }
-    ion-input input{
-        background-color: yellow;
+    ion-input input {
         width: 100% !important;
     }
-    .placehold_container{
+    .placehold_container {
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
-        background-color: rgba(1,1,1,0.4);
+        background-color: rgba(1, 1, 1, 0);
         justify-content: center;
         align-items: center;
         display: flex;
     }
-    .placehold_container{
-        p{
-            // color:$text-input-placeholder-color;
+    .placehold_container {
+        p {
             padding-left: 0.5rem;
         }
     }
