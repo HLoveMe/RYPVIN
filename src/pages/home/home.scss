@@ -26,21 +26,15 @@ page-home {
                 padding: 8px 0px;
             }
         }
-        .test {
-            height: 44px;
+        .takeiconC div{
+            margin-top: 11.8rem;
+            width: 10rem;
+            height: 10rem;
             background-color: red;
+            border-radius: 5rem;
         }
     }
-    .container {
-        display: flex;
-        justify-content: center;
+    .content {
         background-color: $bg_2;
-    }
-    ion-search {
-        height: 44px;
-        font-size: 1.6rem;
-        color: red;
-        background-color: blue;
-        // border-radius: 22px;
     }
 }

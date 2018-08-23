@@ -1,18 +1,23 @@
 import { NetWorkUtilBox } from './../../app/tools/NetUtils';
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, TextInput } from 'ionic-angular';
+import { Element } from '@angular/compiler';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  active:boolean = false
-  constructor(public navCtrl: NavController,private netUtil:NetWorkUtilBox) {
-    this.netUtil.User().login()
-    setTimeout(()=>{
-      this.active = true
-    },3000)
-  }
+  vinValue: string = ""
+  @ViewChild(TextInput) textInput: TextInput;
+  constructor(public navCtrl: NavController, private netUtil: NetWorkUtilBox) {
+    // this.netUtil.User().login()
 
+  }
+  focus(){
+    
+  }
+  vinInput(vin: string) {
+    
+  }
 }

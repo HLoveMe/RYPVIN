@@ -9,15 +9,16 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content no-padding disable-scroll class="content container">
+<ion-content no-padding disable-scroll class="content">
     <div class="home_icon">
         <img src="../../assets/imgs/index_bg.png" alt="">
     </div>
     <div class="vin_input flex-box-center">
-        <ion-input type="email" class="" placeholder="输入车架号"></ion-input>
+        <ion-input type="email"  class="" placeholder="请输入17位车架号" [ngModel]="vinValue" (ngModelChange)="vinInput($event)"></ion-input>
     </div>
-
-    <ion-search class="search">
-
-    </ion-search>
+    <div class="takeiconC flex-box-center">
+        <div class="flex-box-center">
+            <ion-icon name="camera-outline" color="light" style="font-size: 5rem"></ion-icon>
+        </div>
+    </div>
 </ion-content>

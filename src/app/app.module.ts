@@ -18,13 +18,14 @@ import { Setting } from '../pages/Setting/Setting';
 
 
 import { AppVersion } from '@ionic-native/app-version';
+import { CustomDIVInput } from './Provider/Component/EditView/CustomDIV';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,SideMenuPage,VinMessagePage,Setting,About,
     
     
-    SearchInput
+    SearchInput,CustomDIVInput
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,7 @@ import { AppVersion } from '@ionic-native/app-version';
     HomePage,SideMenuPage,VinMessagePage,Setting,About,
 
 
-    SearchInput
+    SearchInput,CustomDIVInput
 
   ],
   providers: [

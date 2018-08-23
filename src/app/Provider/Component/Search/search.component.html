@@ -3,7 +3,10 @@
         <div class="icon" [style.display]="leftIcon && edit ? 'block' : 'none'">
             <ion-icon name="search" class="seach-icon"></ion-icon>
         </div>
-        <ion-input [placeholder]="_placeholder" #textInput type="text" clearInput="true" (blur)="onblur()" [(ngModel)]="value">
+        <ion-input [placeholder]="_placeholder" #textInput type="text" clearInput="true"
+         (blur)="onblur($event)"
+         (focus)="onfocus($event)"
+         [ngModel]="value" (ngModelChange)="textChange($event)">
 
         </ion-input>
     </div>
