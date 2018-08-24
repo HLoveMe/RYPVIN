@@ -27,13 +27,13 @@ export class HomePage  implements OnInit{
   }
   ionViewWillEnter(){
     this.keyboardShow = this.keyboard.keyboardWillShow().subscribe(()=>{
-      this.keyboard.hide()
+      // this.keyboard.hide()
     })
   }
   ionViewWillLeave(){
     this.keyboardShow && this.keyboardShow.unsubscribe()
   }
   vinInput(vin: string) {
-    console.log(1111,this.keyboard.isVisible)
+    // console.log(1111,this.keyboard.isVisible)
   }
 }
