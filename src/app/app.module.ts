@@ -15,10 +15,9 @@ import { HomePage } from '../pages/home/home';
 import { SideMenuPage } from "../pages/SideMenu/SideMenu";
 import { VinMessagePage } from "../pages/VinMessage/VinMessage";
 import { Setting } from '../pages/Setting/Setting';
-
-
 import { AppVersion } from '@ionic-native/app-version';
 import { CustomDIVInput } from './Provider/Component/EditView/CustomDIV';
+import { Camera } from '@ionic-native/camera';
 @NgModule({
   declarations: [
     MyApp,
@@ -49,7 +48,7 @@ import { CustomDIVInput } from './Provider/Component/EditView/CustomDIV';
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen,Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AppVersion,AppInfoService,NetWorkUtilBox
   ]
