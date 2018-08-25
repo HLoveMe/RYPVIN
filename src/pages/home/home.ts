@@ -4,25 +4,25 @@ import { NavController, TextInput } from 'ionic-angular';
 import { KeyKoard } from "../../app/Appinstructions/Injectable/Key-board";
 import { Subscription } from 'rxjs/Subscription';
 import { Camera ,CameraOptions} from '@ionic-native/camera';
-
+import $ from 'jquery'
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit {
   keyboardShow: Subscription = null;
-  vinValue: string = "a"
+  vinValue: string = ""
   @ViewChild(TextInput) textInput: TextInput;
   constructor(public navCtrl: NavController,
     private netUtil: NetWorkUtilBox,
     private keyboard: KeyKoard,
-    private camera: Camera
+    private camera: Camera,
   ) {
     // this.netUtil.User().login()
 
   }
-  ngOnInit() {
-
+  ngOnInit() {}
+  ionViewDidLoad(){
   }
   ionViewWillEnter() {
     this.keyboardShow = this.keyboard.keyboardWillShow().subscribe(() => {
