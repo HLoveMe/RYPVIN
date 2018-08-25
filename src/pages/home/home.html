@@ -14,12 +14,13 @@
         <img src="../../assets/imgs/index_bg.png" alt="">
     </div>
     <div class="vin_input flex-box-center">
-        <ion-input type="email" class="" placeholder="请输入17位车架号" [ngModel]="vinValue" (ngModelChange)="vinInput($event)"></ion-input>
+        <div class="canvasC">
+            <canvas #Canvas></canvas>
+        </div>
     </div>
-    <div class="takeiconC flex-box-center" #A>
+    <div class="takeiconC flex-box-center">
         <div class="flex-box-center" (click)="openCamera()">
             <ion-icon name="camera-outline" color="light" style="font-size: 5rem"></ion-icon>
         </div>
     </div>
-    <canvas width="200" height="50" id="canvas"></canvas>
 </ion-content>

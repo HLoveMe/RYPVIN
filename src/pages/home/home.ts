@@ -1,11 +1,11 @@
 import { NetWorkUtilBox } from './../../app/tools/NetUtils';
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { NavController, TextInput } from 'ionic-angular';
+import { Component, ViewChild, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { NavController, TextInput, Platform } from 'ionic-angular';
 import { KeyKoard } from "../../app/Appinstructions/Injectable/Key-board";
 import { Subscription } from 'rxjs/Subscription';
-import { Camera ,CameraOptions} from '@ionic-native/camera';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import $ from 'jquery'
-declare var CanvasInput:any;
+declare var CanvasInput: any;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -13,21 +13,46 @@ declare var CanvasInput:any;
 export class HomePage implements OnInit {
   keyboardShow: Subscription = null;
   vinValue: string = ""
-  input:any = null;
+  input: any = null;
   @ViewChild(TextInput) textInput: TextInput;
+  @ViewChild("Canvas") Canvas: ElementRef;
   constructor(public navCtrl: NavController,
     private netUtil: NetWorkUtilBox,
     private keyboard: KeyKoard,
     private camera: Camera,
+    private pla: Platform,
+    private render: Renderer2
   ) {
     // this.netUtil.User().login()
-
+    //<ion-input type="email" class="" placeholder="请输入17位车架号" [ngModel]="vinValue" (ngModelChange)="vinInput($event)"></ion-input>
   }
-  ngOnInit() {}
-  ionViewDidLoad(){
-    this.input = new CanvasInput({
-      canvas: document.getElementById('canvas'),
-    })
+  ngOnInit() { }
+  ionViewDidEnter() {
+    let width = this.pla.width() - 64
+      let heigh = 35
+      this.render.setProperty(this.Canvas.nativeElement, "width", `${width}`)
+      this.render.setProperty(this.Canvas.nativeElement, "height", `${heigh}`)
+      this.input = new CanvasInput({
+        canvas: this.Canvas.nativeElement,
+        borderWidth: 0,
+        padding: 0,
+        borderColor:"white",
+        placeHolder: " 输入你的名字...",
+        width: width,
+        height: 20,
+        borderRadius: heigh / 2,
+        boxShadow: "0px 0px 0px white",
+        backgroundColor:"white",
+        maxlength:17,
+        innerShadow:"0px 0px 0px white",
+        y:10,
+        fontColor:"black"
+      })
+      setTimeout(()=>{
+        this.input._value="XXXXX"
+        this.input.render()
+        console.log(this.input)
+      },10000)
   }
   ionViewWillEnter() {
     this.keyboardShow = this.keyboard.keyboardWillShow().subscribe(() => {
