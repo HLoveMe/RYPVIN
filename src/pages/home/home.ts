@@ -5,6 +5,7 @@ import { KeyKoard } from "../../app/Appinstructions/Injectable/Key-board";
 import { Subscription } from 'rxjs/Subscription';
 import { Camera ,CameraOptions} from '@ionic-native/camera';
 import $ from 'jquery'
+declare var CanvasInput:any;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -12,6 +13,7 @@ import $ from 'jquery'
 export class HomePage implements OnInit {
   keyboardShow: Subscription = null;
   vinValue: string = ""
+  input:any = null;
   @ViewChild(TextInput) textInput: TextInput;
   constructor(public navCtrl: NavController,
     private netUtil: NetWorkUtilBox,
@@ -23,6 +25,9 @@ export class HomePage implements OnInit {
   }
   ngOnInit() {}
   ionViewDidLoad(){
+    this.input = new CanvasInput({
+      canvas: document.getElementById('canvas'),
+    })
   }
   ionViewWillEnter() {
     this.keyboardShow = this.keyboard.keyboardWillShow().subscribe(() => {
