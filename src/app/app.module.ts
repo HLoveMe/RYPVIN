@@ -18,13 +18,15 @@ import { Setting } from '../pages/Setting/Setting';
 import { AppVersion } from '@ionic-native/app-version';
 import { CustomDIVInput } from './Provider/Component/EditView/CustomDIV';
 import { Camera } from '@ionic-native/camera';
+import { VinKeyBoard } from './Provider/Component/KeyBorads/VinKeyBoard/VinKeyBoard';
+import { CustomKeyBoardManager } from './Provider/Serve/KeyBoard/CustomKeyBoardManager';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,SideMenuPage,VinMessagePage,Setting,About,
     
     
-    SearchInput,CustomDIVInput
+    SearchInput,CustomDIVInput,VinKeyBoard
   ],
   imports: [
     BrowserModule,
@@ -41,16 +43,14 @@ import { Camera } from '@ionic-native/camera';
   entryComponents: [
     MyApp,
     HomePage,SideMenuPage,VinMessagePage,Setting,About,
-
-
-    SearchInput,CustomDIVInput
+    SearchInput,CustomDIVInput,VinKeyBoard
 
   ],
   providers: [
     StatusBar,
     SplashScreen,Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AppVersion,AppInfoService,NetWorkUtilBox
+    AppVersion,AppInfoService,NetWorkUtilBox,CustomKeyBoardManager
   ]
 })
 export class AppModule {}
