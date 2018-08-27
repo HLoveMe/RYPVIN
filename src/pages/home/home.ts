@@ -4,19 +4,20 @@ import { NavController, TextInput, Platform, ModalController, Modal } from 'ioni
 import { KeyKoard } from "../../app/Appinstructions/Injectable/Key-board";
 import { Subscription } from 'rxjs/Subscription';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import $ from 'jquery'
 import { VinKeyBoard } from '../../app/Provider/Component/KeyBorads/VinKeyBoard/VinKeyBoard';
-import { CustomKeyBoardManager, KeyBoardStyle } from '../../app/Provider/Serve/KeyBoard/CustomKeyBoardManager';
+
 declare var CanvasInput: any;
+import $ from 'jquery'
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
 })
 export class HomePage implements OnInit {
   keyboardShow: Subscription = null;
   vinValue: string = ""
   input: any = null;
   vinKey:Modal = null
+  customKeyBoard:string="active"//inactive
   @ViewChild(TextInput) textInput: TextInput;
   @ViewChild("Canvas") Canvas: ElementRef;
   @ViewChild("Content") Content:ElementRef;
@@ -25,12 +26,9 @@ export class HomePage implements OnInit {
     private keyboard: KeyKoard,
     private camera: Camera,
     private pla: Platform,
-    private render: Renderer2,
-    private modalC:ModalController,
-    private keyM:CustomKeyBoardManager
+    private render: Renderer2
   ) {
-    // this.netUtil.User().login()
-    //<ion-input type="email" class="" placeholder="请输入17位车架号" [ngModel]="vinValue" (ngModelChange)="vinInput($event)"></ion-input>
+
   }
   ngOnInit() { }
   ionViewDidEnter() {
@@ -56,15 +54,15 @@ export class HomePage implements OnInit {
     })
   }
   ionViewWillEnter() {
+    
     this.keyboardShow = this.keyboard.keyboardWillShow().subscribe(() => {
       this.keyboard.hide()
-      this.keyM.showKeyBoard(KeyBoardStyle.VinKeyBoard,this.Content.nativeElement)
-      // this.vinKey = this.modalC.create(VinKeyBoard,null,{enableBackdropDismiss:true})
-      // this.vinKey.present()  
+      this.customKeyBoard = "active"
     })
   }
   ionViewWillLeave() {
     this.keyboardShow && this.keyboardShow.unsubscribe()
+    this.customKeyBoard = "inactive"
   }
   openCamera() {
     const options: CameraOptions = {
@@ -76,6 +74,9 @@ export class HomePage implements OnInit {
     this.camera.getPicture(options).then((result) => {
       console.log(result)
     })
+  }
+  ContentClick(){
+    this.customKeyBoard = "inactive"
   }
   vinInput(vin: string) {
     // console.log(1111,this.keyboard.isVisible)

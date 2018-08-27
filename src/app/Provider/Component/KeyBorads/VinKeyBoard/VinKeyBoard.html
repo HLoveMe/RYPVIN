@@ -1,5 +1,20 @@
-<ion-content no-padding disable-scroll (click)="dismiss(event)">
-    <div class = "keyboard">
-sasas
+<div class="keyboard" [@CustomKeyBoard]="state" #Container (click.stop)="onClick($event)">
+    <div class="header">
+        <div class="camera flex-box-center">
+            <ion-icon name="camera-outline" color="light" style="font-size: 3.5rem"></ion-icon>
+        </div>
     </div>
-</ion-content>
+    <div class="keys">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="key-tools">
+            <div class="flex-box-center">
+                分享给朋友
+            </div>
+            <div class="flex-box-center">
+                立即查询
+            </div>
+        </div>
+    </div>
+</div>

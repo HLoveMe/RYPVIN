@@ -9,7 +9,7 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content no-padding disable-scroll class="content" #Content>
+<ion-content no-padding disable-scroll class="content" #Content (click)="ContentClick($event)">
     <div class="home_icon">
         <img src="../../assets/imgs/index_bg.png" alt="">
     </div>
@@ -23,4 +23,7 @@
             <ion-icon name="camera-outline" color="light" style="font-size: 5rem"></ion-icon>
         </div>
     </div>
+    <vinkeyboard [state]="customKeyBoard">
+
+    </vinkeyboard>
 </ion-content>

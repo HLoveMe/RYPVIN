@@ -1,3 +1,4 @@
+import { StopEventPropagation } from './Directives/StopEventPropagation';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,11 +11,13 @@ import { KeyKoard } from "./Injectable/Key-board";
     ],
     declarations: [
         FlexBoxCenter,
-        DisableScroll
+        DisableScroll,
+        StopEventPropagation
     ],
     exports:[
         FlexBoxCenter,
-        DisableScroll
+        DisableScroll,
+        StopEventPropagation
     ]
     ,providers:[
         KeyKoard

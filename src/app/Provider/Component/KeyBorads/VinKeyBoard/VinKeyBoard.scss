@@ -1,15 +1,60 @@
-
-vinkeyboard{
-    ion-content{
-        position: relative;
-        background-color: rgba(1,1,1,0) !important;
-    }
-    .keyboard{
+vinkeyboard {
+    .keyboard {
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 0;
-        height: 100px;
-        background-color: rebeccapurple;
+        bottom: 0rem;
+        height: 29.5rem;
+        background-color: #D3D5DB;
+        z-index: 99999999;
+    }
+    .header {
+        height: 3.3rem;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+    }
+    .header {
+        .camera {
+            width: 4.9rem;
+            height: 4.9rem;
+            border-radius: 2.45rem;
+            background-color: $vin-app-theme-color;
+            margin-top: -2.45rem;
+        }
+    }
+    .keys {
+        height: 26.2rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .keys {
+        div {
+            flex: 1;
+            border: 1px solid blue;
+            font-size: 1.8rem;
+        }
+        .key-tools {
+            height: 5.9rem;
+            display: flex;
+            padding: 1rem;
+        }
+        .key-tools {
+            div {
+                flex: 1;
+                border: 1px solid blue;
+                border-radius: 1.2rem;
+            }
+            div:nth-child(1) {
+                background-color: white;
+                color: $vin-app-theme-color;
+            }
+            div:nth-child(2) {
+                background-color: rebeccapurple;
+                margin-left: 2rem;
+                background-color: $vin-app-theme-color;
+                color: white
+            }
+        }
     }
 }

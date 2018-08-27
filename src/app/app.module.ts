@@ -1,13 +1,7 @@
-import { SearchInput } from './Provider/Component/Search/search.component';
-
-import { NetWorkUtilBox } from './tools/NetUtils';
-import { AppInfoService } from './tools/Api';
-import { About } from './../pages/About/About';
-
-import { AppInstructions } from './Appinstructions/AppInstructions';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
@@ -19,7 +13,11 @@ import { AppVersion } from '@ionic-native/app-version';
 import { CustomDIVInput } from './Provider/Component/EditView/CustomDIV';
 import { Camera } from '@ionic-native/camera';
 import { VinKeyBoard } from './Provider/Component/KeyBorads/VinKeyBoard/VinKeyBoard';
-import { CustomKeyBoardManager } from './Provider/Serve/KeyBoard/CustomKeyBoardManager';
+import { SearchInput } from './Provider/Component/Search/search.component';
+import { NetWorkUtilBox } from './tools/NetUtils';
+import { AppInfoService } from './tools/Api';
+import { About } from './../pages/About/About';
+import { AppInstructions } from './Appinstructions/AppInstructions';
 @NgModule({
   declarations: [
     MyApp,
@@ -37,7 +35,7 @@ import { CustomKeyBoardManager } from './Provider/Serve/KeyBoard/CustomKeyBoardM
     }),
     //特性模块
     AppInstructions,
-    
+    BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,7 +48,7 @@ import { CustomKeyBoardManager } from './Provider/Serve/KeyBoard/CustomKeyBoardM
     StatusBar,
     SplashScreen,Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AppVersion,AppInfoService,NetWorkUtilBox,CustomKeyBoardManager
+    AppVersion,AppInfoService,NetWorkUtilBox
   ]
 })
 export class AppModule {}
