@@ -1,0 +1,26 @@
+<div class="keyboard" [@CustomKeyBoard]="state" #Container (click.stop)="onClick($event)">
+    <div class="header">
+        <div class="camera flex-box-center">
+            <ion-icon name="camera-outline" color="light" style="font-size: 3.5rem"></ion-icon>
+        </div>
+    </div>
+    <div class="keys">
+        <ng-container *ngFor="let keyVakues of keyValueCollection;let row = index">
+            <div class="key-row">
+                <ng-container *ngFor="let item of keyVakues;let index = index">
+                    <a [style.margin-left.rem]="index == 0 ? 0 : 0.4">
+                        {{ item.key }}
+                    </a>
+                </ng-container>
+            </div>
+        </ng-container>
+        <div class="key-tools">
+            <div class="flex-box-center">
+                分享给朋友
+            </div>
+            <div class="flex-box-center">
+                立即查询
+            </div>
+        </div>
+    </div>
+</div>

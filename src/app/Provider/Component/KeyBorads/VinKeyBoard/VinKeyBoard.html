@@ -5,9 +5,28 @@
         </div>
     </div>
     <div class="keys">
-        <div></div>
-        <div></div>
-        <div></div>
+        <ng-container *ngFor="let keyVakues of keyValueCollection;let row = index">
+            <div class="key-row" [ngSwitch]="row">
+                <ng-container *ngSwitchCase=3>
+                    <div class="key-row row-3">
+                        <ng-container *ngFor="let item of keyVakues;let index = index">
+                            <a [style.margin-left.rem]="index == 0 ? 0 : 0.4">
+                                        {{ item.key }}
+                                    </a>
+                        </ng-container>
+                        <div class="voice">{{Voice.key}}</div>
+                        <div class="delete">{{Delete.key}}</div>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                    <ng-container *ngFor="let item of keyVakues;let index = index">
+                        <a [style.margin-left.rem]="index == 0 ? 0 : 0.4">
+                            {{ item.key }}
+                        </a>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </ng-container>
         <div class="key-tools">
             <div class="flex-box-center">
                 分享给朋友
