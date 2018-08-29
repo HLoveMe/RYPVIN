@@ -63,17 +63,15 @@ export class VinKeyBoard implements OnInit{
         this.render.setStyle(event.target,"opacity",0.5)
 
 
-        let rect =  (event.target as HTMLElement).getBoundingClientRect() as DOMRect
-        let crect = (this.Container.nativeElement as HTMLElement).getBoundingClientRect() as DOMRect
-        let x = (rect.x  + (rect.width - 40) /2 )  + "px"
-        let y = (rect.y - crect.y - 50) + "px"
+        let rect =  (event.target as HTMLElement).getBoundingClientRect() 
+        let crect = (this.Container.nativeElement as HTMLElement).getBoundingClientRect() 
+        let x = (rect["x"]  + (rect.width - 40) /2 )  + "px"
+        let y = (rect["y"] - crect["y"] - 50) + "px"
         this.render.setStyle(this.KeyShowContainer.nativeElement,"left",x)
         this.render.setStyle(this.KeyShowContainer.nativeElement,"top",y)
         this.render.setStyle(this.KeyShowContainer.nativeElement,"display","block")
         this.PressKey = value
-        setTimeout(()=>{
-            this.render.setStyle(this.KeyShowContainer.nativeElement,"display","none")
-        },200)
+        setTimeout(()=>{this.render.setStyle(this.KeyShowContainer.nativeElement,"display","none")},200)
         
     }
     onUp(event:TouchEvent,value:KeyValue){

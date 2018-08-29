@@ -1,5 +1,5 @@
 <div class="keyboard" [@CustomKeyBoard]="state" #Container (click.stop)="onClick($event)">
-    <div style="position:absolute;display: block;" #KeyShowContainer class="PressKey">
+    <div style="position:absolute;display: none;" #KeyShowContainer class="PressKey">
         {{PressKey.key}}
     </div>
     <div class="header">
