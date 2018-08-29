@@ -8,6 +8,16 @@ vinkeyboard {
         background-color: #D3D5DB;
         z-index: 99999999;
     }
+    .keyboard .PressKey {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+        color: black;
+        text-align: center;
+        line-height: 4rem;
+        background-color: $gray_light;
+        border-radius: 6px;
+    }
     .header {
         height: 3.3rem;
         background-color: white;
@@ -64,7 +74,6 @@ vinkeyboard {
         .key-tools {
             div {
                 flex: 1;
-                border: 1px solid blue;
                 border-radius: 1.2rem;
             }
             div:nth-child(1) {

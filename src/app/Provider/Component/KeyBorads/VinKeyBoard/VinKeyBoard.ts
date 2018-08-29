@@ -22,8 +22,12 @@ export class VinKeyBoard implements OnInit{
     isIphoneX:boolean = false
     @Input() state:string="inactive"
     @ViewChild("Container") Container:ElementRef
+    @ViewChild("KeyShowContainer") KeyShowContainer:ElementRef
+    
     Voice:KeyValue = {key:"V",value:""}
     Delete:KeyValue = {key:"D",value:""}
+    //当前点击的key
+    PressKey:KeyValue = {key:"我",value:""}
     keyValueCollection:Array<Array<KeyValue>> = [
         [
             {key:"1",value:""},{key:"2",value:""},{key:"3",value:""},{key:"4",value:""},{key:"5",value:""},{key:"6",value:""}
@@ -54,6 +58,26 @@ export class VinKeyBoard implements OnInit{
             this.render.setStyle(this.Container.nativeElement,"height","32.9rem")
     }
     dismiss(event){
+    }
+    onPress(event:TouchEvent,value:KeyValue){
+        this.render.setStyle(event.target,"opacity",0.5)
+
+
+        let rect =  (event.target as HTMLElement).getBoundingClientRect() as DOMRect
+        let crect = (this.Container.nativeElement as HTMLElement).getBoundingClientRect() as DOMRect
+        let x = (rect.x  + (rect.width - 40) /2 )  + "px"
+        let y = (rect.y - crect.y - 50) + "px"
+        this.render.setStyle(this.KeyShowContainer.nativeElement,"left",x)
+        this.render.setStyle(this.KeyShowContainer.nativeElement,"top",y)
+        this.render.setStyle(this.KeyShowContainer.nativeElement,"display","block")
+        this.PressKey = value
+        setTimeout(()=>{
+            this.render.setStyle(this.KeyShowContainer.nativeElement,"display","none")
+        },200)
+        
+    }
+    onUp(event:TouchEvent,value:KeyValue){
+        this.render.setStyle(event.target,"opacity",1)
     }
     onClick(){}
 }

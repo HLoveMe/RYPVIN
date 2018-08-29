@@ -1,16 +1,20 @@
 <div class="keyboard" [@CustomKeyBoard]="state" #Container (click.stop)="onClick($event)">
+    <div style="position:absolute;display: block;" #KeyShowContainer class="PressKey">
+        {{PressKey.key}}
+    </div>
     <div class="header">
         <div class="camera flex-box-center">
             <ion-icon name="camera-outline" color="light" style="font-size: 3.5rem"></ion-icon>
         </div>
     </div>
     <div class="keys">
+
         <ng-container *ngFor="let keyVakues of keyValueCollection;let row = index">
             <div class="key-row" [ngSwitch]="row">
                 <ng-container *ngSwitchCase=3>
                     <div class="key-row row-3">
                         <ng-container *ngFor="let item of keyVakues;let index = index">
-                            <a [style.margin-left.rem]="index == 0 ? 0 : 0.4">
+                            <a [style.margin-left.rem]="index == 0 ? 0 : 0.4" (touchstart)="onPress($event,item)" (touchend)="onUp($event,item)">
                                         {{ item.key }}
                                     </a>
                         </ng-container>
@@ -20,7 +24,7 @@
                 </ng-container>
                 <ng-container *ngSwitchDefault>
                     <ng-container *ngFor="let item of keyVakues;let index = index">
-                        <a [style.margin-left.rem]="index == 0 ? 0 : 0.4">
+                        <a [style.margin-left.rem]="index == 0 ? 0 : 0.4" (touchstart)="onPress($event,item)" (touchend)="onUp($event,item)">
                             {{ item.key }}
                         </a>
                     </ng-container>
