@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FlexBoxCenter } from './Directives/Flex-Box-Center';
 import { DisableScroll } from './Directives/DisableScroll';
 import { KeyKoard } from "./Injectable/Key-board";
+import { ElementClickThrottle } from './Directives/ClickThrottle';
 @NgModule({
     imports: [
         CommonModule
@@ -17,7 +18,8 @@ import { KeyKoard } from "./Injectable/Key-board";
     exports:[
         FlexBoxCenter,
         DisableScroll,
-        StopEventPropagation
+        StopEventPropagation,
+        ElementClickThrottle
     ]
     ,providers:[
         KeyKoard

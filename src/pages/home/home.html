@@ -23,7 +23,7 @@
             <ion-icon name="camera-outline" color="light" style="font-size: 5rem"></ion-icon>
         </div>
     </div>
-    <vinkeyboard [state]="customKeyBoard">
+    <vinkeyboard [state]="customKeyBoard" (keyPress)=keyPress($event)>
 
     </vinkeyboard>
 </ion-content>

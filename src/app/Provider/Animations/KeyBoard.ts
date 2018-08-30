@@ -9,7 +9,7 @@ export const CustomAnimation  = [
         state("active",style({
             bottom: "0"
         })),
-        transition("active<=>inactive",animate("750ms ease-in"))
+        transition("active<=>inactive",animate("250ms ease-in"))
     ]),
     trigger("NumberKeyBoard",[
 

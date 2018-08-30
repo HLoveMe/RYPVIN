@@ -13,14 +13,14 @@ import $ from 'jquery'
   templateUrl: 'home.html',
 })
 export class HomePage implements OnInit {
-  keyboardShow: Subscription = null;
+
   vinValue: string = ""
-  input: any = null;
-  vinKey:Modal = null
-  customKeyBoard:string="active"//inactive
+  private input: any = null;//输入框
+  private keyboardShow: Subscription = null; //系统键盘弹出监听
+  customKeyBoard: string = "inactive"//inactive
   @ViewChild(TextInput) textInput: TextInput;
   @ViewChild("Canvas") Canvas: ElementRef;
-  @ViewChild("Content") Content:ElementRef;
+  @ViewChild("Content") Content: ElementRef;
   constructor(public navCtrl: NavController,
     private netUtil: NetWorkUtilBox,
     private keyboard: KeyKoard,
@@ -54,7 +54,7 @@ export class HomePage implements OnInit {
     })
   }
   ionViewWillEnter() {
-    
+
     this.keyboardShow = this.keyboard.keyboardWillShow().subscribe(() => {
       this.keyboard.hide()
       this.customKeyBoard = "active"
@@ -75,10 +75,35 @@ export class HomePage implements OnInit {
       console.log(result)
     })
   }
-  ContentClick(){
+  //点击其他地方移除键盘
+  ContentClick() {
     this.customKeyBoard = "inactive"
   }
-  vinInput(vin: string) {
-    // console.log(1111,this.keyboard.isVisible)
+  //键盘事件
+  keyPress(event) {
+    switch (event.key) {
+      case "Input":
+        this.vinValue += event.value;
+        this.input._value = this.vinValue
+        this.input.render()
+        if (this.vinValue.length == 17)
+          this.customKeyBoard = "inactive"
+        break
+      case "Voice":
+        let value = event.value as boolean
+
+        break
+      case "Delete":
+        this.vinValue = this.vinValue.substring(0, this.vinValue.length - 1)
+        this.input._value = this.vinValue
+        this.input.render()
+        break
+      case "Share":
+        break
+      case "Search":
+        break
+    }
+
+    // this.input.render()
   }
 }

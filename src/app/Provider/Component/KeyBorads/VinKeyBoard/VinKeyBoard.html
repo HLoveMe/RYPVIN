@@ -18,8 +18,12 @@
                                         {{ item.key }}
                                     </a>
                         </ng-container>
-                        <div class="voice">{{Voice.key}}</div>
-                        <div class="delete">{{Delete.key}}</div>
+                        <div class="voice" [style.color]="voiceAction?'#DB3727':'#757575'" (click) = "toggleVoice()">
+                            <i class="icon iconfont icon-voice1"></i>
+                        </div>
+                        <div class="delete" (click)="deleteWord()">
+                            <i class="icon iconfont icon-keyboard_d"></i>
+                        </div>
                     </div>
                 </ng-container>
                 <ng-container *ngSwitchDefault>
@@ -32,10 +36,10 @@
             </div>
         </ng-container>
         <div class="key-tools">
-            <div class="flex-box-center">
+            <div class="flex-box-center" (click.throttle)="ContentShare()">
                 分享给朋友
             </div>
-            <div class="flex-box-center">
+            <div class="flex-box-center" (click.throttle)="Search()">
                 立即查询
             </div>
         </div>

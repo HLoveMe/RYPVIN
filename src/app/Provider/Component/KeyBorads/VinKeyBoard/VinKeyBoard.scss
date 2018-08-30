@@ -97,6 +97,8 @@ vinkeyboard {
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 1rem;
+            color: $vin-app-theme-color;
         }
         .voice {
             left: 0.45rem;
