@@ -13,7 +13,8 @@ import { ElementClickThrottle } from './Directives/ClickThrottle';
     declarations: [
         FlexBoxCenter,
         DisableScroll,
-        StopEventPropagation
+        StopEventPropagation,
+        ElementClickThrottle
     ],
     exports:[
         FlexBoxCenter,

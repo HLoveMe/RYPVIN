@@ -83,11 +83,11 @@ export class HomePage implements OnInit {
   keyPress(event) {
     switch (event.key) {
       case "Input":
+        if (this.vinValue.length == 17) return
         this.vinValue += event.value;
         this.input._value = this.vinValue
         this.input.render()
-        if (this.vinValue.length == 17)
-          this.customKeyBoard = "inactive"
+
         break
       case "Voice":
         let value = event.value as boolean
