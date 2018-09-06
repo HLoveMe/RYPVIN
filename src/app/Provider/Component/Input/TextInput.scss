@@ -1,0 +1,29 @@
+text-input {
+    .Container {
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+        min-height: 3.2rem;
+        background-color: white;
+    }
+    .Container>div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .Container {
+        ion-input {}
+        .left_icon {
+            padding: 0 10px;
+        }
+        .text-input {
+            height: 100%;
+            margin: 0px !important;
+            padding: 4px 0px;
+        }
+        input {
+            width: 100% !important;
+        }
+    }
+}

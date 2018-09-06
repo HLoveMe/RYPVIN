@@ -1,3 +1,4 @@
+import { UserLogin } from './../pages/User/UserLogin/UserLogin';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -5,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+// import { HomePage } from '../pages/home/home';
 import { SideMenuPage } from "../pages/SideMenu/SideMenu";
 import { VinMessagePage } from "../pages/VinMessage/VinMessage";
 import { Setting } from '../pages/Setting/Setting';
@@ -18,13 +19,13 @@ import { NetWorkUtilBox } from './tools/NetUtils';
 import { AppInfoService } from './tools/Api';
 import { About } from './../pages/About/About';
 import { AppInstructions } from './Appinstructions/AppInstructions';
+import { TextInput } from "./Provider/Component/Input/TextInput";
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,SideMenuPage,VinMessagePage,Setting,About,
+    UserLogin,SideMenuPage,VinMessagePage,Setting,About,
     
-    
-    SearchInput,CustomDIVInput,VinKeyBoard
+    SearchInput,CustomDIVInput,VinKeyBoard,TextInput
   ],
   imports: [
     BrowserModule,
@@ -40,9 +41,8 @@ import { AppInstructions } from './Appinstructions/AppInstructions';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,SideMenuPage,VinMessagePage,Setting,About,
-    SearchInput,CustomDIVInput,VinKeyBoard
-
+    UserLogin,SideMenuPage,VinMessagePage,Setting,About,
+    SearchInput,CustomDIVInput,VinKeyBoard,TextInput
   ],
   providers: [
     StatusBar,

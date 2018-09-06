@@ -1,0 +1,42 @@
+user-login {
+    .toolbar-background {
+        background-color: white !important;
+        border-bottom-width: 0 !important;
+    }
+    ion-content {
+        background-color: yellow !important;
+    }
+    ion-content {
+        .title {
+            margin-top: 8.4rem;
+            text-align: center;
+            font-size: 1.8rem;
+            color: #757575;
+        }
+        .sub-title {
+            margin-top: 2.75rem;
+            font-size: 1.2rem;
+            color: #949494;
+            text-align: center;
+        }
+        .sub-title i {
+            color: $vin-app-theme-color;
+        }
+        .inputC {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.9rem;
+            // font-size: 1.4rem;
+        }
+        .inputC {
+            .password {
+                margin-top: 1.5rem;
+            }
+            text-input {
+                width: 28.5rem;
+                display: block;
+                overflow: hidden;
+            }
+        }
+    }
+}

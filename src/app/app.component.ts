@@ -4,14 +4,16 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomePage } from '../pages/home/home';
+// import { HomePage } from '../pages/home/home';
 import { Setting } from '../pages/Setting/Setting';
+import { UserLogin } from '../pages/User/UserLogin/UserLogin';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  // rootPage:any = HomePage
+  rootPage:any = UserLogin
   sideMenus = []
   @ViewChild("RootConetent") navC:NavController
   constructor(platform: Platform, statusBar: StatusBar, 

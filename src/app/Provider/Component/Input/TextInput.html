@@ -1,0 +1,8 @@
+<div class="Container" #Container>
+    <div>
+        <div *ngFor="let item of leftIcons" class="left_icon flex-box-center" (click)="IconClick(item)">
+            <ion-icon [name]="item.name" [style.font-size]="item.fontSize"></ion-icon>
+        </div>
+        <ion-input type=""></ion-input>
+    </div>
+</div>

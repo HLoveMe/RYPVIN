@@ -1,0 +1,27 @@
+<!-- <ion-header>
+    <ion-navbar>
+        <ion-buttons position>
+            <button ion-button style="padding-left: 2rem">
+                <ion-icon name="ios-arrow-back-outline" style="font-size: 3rem;color:red;"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>
+            AA
+        </ion-title>
+    </ion-navbar>
+</ion-header> -->
+
+<ion-content no-padding disable-scroll>
+    <div class="title">
+        密码登录
+    </div>
+    <div class="sub-title">
+        <i class="icon iconfont icon-personalcenter"></i> 请使用容易配平台账号
+    </div>
+    <div class="inputC account">
+        <text-input [leftIcons]="acountLIcon" (iconClick)="iconClick($event)"></text-input>
+    </div>
+    <div class="inputC password">
+        <text-input [leftIcons]="passLIcons" (iconClick)="iconClick($event)"></text-input>
+    </div>
+</ion-content>
