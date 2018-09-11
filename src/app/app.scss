@@ -57,3 +57,37 @@
     justify-content: center;
     align-items: center;
 }
+//居中
+@mixin flex-box-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+//透明
+@mixin opacity($opacity:50){
+    opacity: $opacity / 100;
+    filter:alpha(opacity=$opacity);
+}
+// @include paddingHorizontal(1px)
+@mixin paddingHorizontal($padding:0px){
+    padding-left: $padding;
+    padding-right: $padding;
+}
+// @include paddingVertical(1px)
+@mixin paddingVertical($padding:0px){
+    padding-top: $padding;
+    padding-bottom: $padding;
+}
+// @include marginHorizontal(1px)
+@mixin marginHorizontal($margin:0px){
+    margin-left: $margin;
+    margin-right: $margin;
+    
+}
+// @include marginVertical(1px)
+@mixin marginVertical($margin:0px){
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+
+
