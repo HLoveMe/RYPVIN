@@ -15,7 +15,7 @@
 //侧栏样式
 .side {
     .Heander {
-        height: 12rem;
+        height: 2.4rem;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -26,9 +26,9 @@
         justify-content: flex-end;
         align-items: center;
         .icon {
-            width: 7rem;
-            height: 7rem;
-            border-radius: 3.5rem;
+            width: 1.4rem;
+            height: 1.4rem;
+            border-radius: 0.7rem;
         }
     }
     .rv {
@@ -48,7 +48,7 @@
 
 //设置导航栏标题
 .toolbar-title {
-    font-size: 1.7rem;
+    font-size: 0.34rem;
 }
 
 //felx居中
@@ -89,5 +89,3 @@
     margin-top: $margin;
     margin-bottom: $margin;
 }
-
-
