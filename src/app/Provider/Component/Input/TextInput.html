@@ -3,6 +3,17 @@
         <div *ngFor="let item of leftIcons" class="left_icon flex-box-center" (click)="IconClick(item)">
             <ion-icon [name]="item.name" [style.font-size]="item.fontSize"></ion-icon>
         </div>
-        <ion-input type=""></ion-input>
+        <ion-input [ngModel]="value" (ngModelChange)="textChange($event)" type=""></ion-input>
+        <div *ngFor="let item of rightIcons" class="left_icon flex-box-center" (click)="IconClick(item)">
+            <ng-container [ngSwitch]="item.select != null">
+                <ion-icon [name]="item.select ? item.selName : item.name" *ngSwitchCase="true" [style.font-size]="item.fontSize"></ion-icon>
+                <ng-container *ngSwitchDefault [ngSwitch]="item.show != null">
+                        <ng-container *ngSwitchCase="true">
+                            <ion-icon [name]="item.name" *ngIf="item.show" [style.font-size]="item.fontSize"></ion-icon>
+                        </ng-container>
+                    <ion-icon [name]="item.name" *ngSwitchDefault [style.font-size]="item.fontSize"></ion-icon>
+                </ng-container>
+            </ng-container>
+        </div>
     </div>
 </div>

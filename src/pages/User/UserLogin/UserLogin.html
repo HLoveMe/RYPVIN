@@ -19,9 +19,9 @@
         <i class="icon iconfont icon-personalcenter"></i> 请使用容易配平台账号
     </div>
     <div class="inputC account">
-        <text-input [leftIcons]="acountLIcon" (iconClick)="iconClick($event)"></text-input>
+        <text-input #Account [leftIcons]="acountLIcon" [rightIcons]="accountRIcons" (iconClick)="AccounticonClick($event)"></text-input>
     </div>
     <div class="inputC password">
-        <text-input [leftIcons]="passLIcons" (iconClick)="iconClick($event)"></text-input>
+        <text-input #Password [leftIcons]="passLIcons"  (iconClick)="PasswordiconClick($event)"></text-input>
     </div>
 </ion-content>
